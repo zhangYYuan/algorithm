@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回文数</title>
+</head>
+<body>
+    <script>
+        var isPalindrome = function(x) {
+            if(x<0) return false
+            if (x === 0) return true
+            let str = x+'';
+            let arr = str.split("")
+            str = arr.reverse().join("")
+            return str == x ? x : false
+        };
+        console.log(isPalindrome(01))
+    </script>
+</body>
+</html>

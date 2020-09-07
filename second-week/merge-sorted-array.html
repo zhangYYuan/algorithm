@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反转链表</title>
+</head>
+<body>
+    <script>
+        /**
+             * @param {number[]} nums1
+             * @param {number} m
+             * @param {number[]} nums2
+             * @param {number} n
+             * @return {void} Do not return anything, modify nums1 in-place instead.
+         */
+        var merge = function(nums1, m, nums2, n) {
+            // return nums1.slice(0,m).concat(nums2.slice(0,n)).sort()
+            nums1.splice(m);
+            nums2.splice(n)
+            nums1.push(...nums2);
+            nums1.sort((a,b) => a-b);
+            // 审题,要求直接改变nums1
+            // slice()不会改变原数组
+            // splice()返回被删除元素,原数组改变
+        };
+        console.log(merge([1,2,3,0,0,0],3,[2,5,6],3))
+    </script>
+</body>
+</html>

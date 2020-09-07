@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回文数</title>
+</head>
+<body>
+    <script>
+        var longestCommonPrefix = function(strs) {
+            // let data = []
+            // let arr = strs.map(item => item.length)
+            // let length = arr.sort()[0];
+            let str = strs[0];
+            if (!str) return ''
+            let res = ''
+            for(let i = 0; i < str.length; i++){
+                let flag = strs.every(item => item[i] == str[i])
+                if (flag) {
+                    res += str[i]
+                }else {
+                    return res
+                }
+            }
+            return res
+        };
+        console.log(longestCommonPrefix(["flower","flow","flight"]))
+    </script>
+</body>
+</html>

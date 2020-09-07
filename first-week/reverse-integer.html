@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整数反转</title>
+</head>
+<body>
+    <script>
+        var reverse = function(x) {
+            let maxNum = Math.pow(2,31);
+            let minNum = Math.pow(-2,31)
+            let str = Math.sign(x);
+            let reallyNum = (Math.abs(x)+'').split("").reverse().join("")*str;
+            if(reallyNum>maxNum || reallyNum<minNum) reallyNum = 0
+            return reallyNum
+        };
+        console.log(reverse(101))
+    </script>
+</body>
+</html>

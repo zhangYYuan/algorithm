@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双数之和</title>
+</head>
+<body>
+    <script>
+        var twoSum = function(nums, target) {
+            let arr = []
+            for(var i = 0; i < nums.length; i++) {
+                for(var j = i+1; j < nums.length; j++) {
+                    console.log(~~nums[i] + ~~nums[j])
+                    if (~~nums[i] + ~~nums[j] === ~~target) {
+                        arr.push(i)
+                        arr.push(j)
+                    }
+                }
+            }
+            return arr
+        };
+        console.log(twoSum([2,7,11,15],9))
+        const twoSumBetter = (nums, target) => {
+            const preObj = {};
+            for(var i = 0; i < nums.length; i++){
+                const curNum = nums[i];
+                const targetNum = target - curNum;
+                const targetNumIndex = preObj[targetNum];
+                if (targetNumIndex !== undefined) {
+                    return [targetNumIndex, i]
+                }
+                preObj[curNum] = i;
+                console.log(preObj)
+            }
+        }
+        console.log(twoSumBetter([2,7,11,15],9))
+    </script>
+</body>
+</html>
